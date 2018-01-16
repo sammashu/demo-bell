@@ -1,0 +1,53 @@
+== Installation ==
+
+go to root of the project and build the application with mvn clean install in the command line to get all dependancy
+
+if you have boot dashboard install into eclipse or using any IDE that allow to launch spring boot app it should be easy to start with it.
+
+If not after the mvn clean install the target folder should be generate at the root folder.
+
+Navigate to that folder and execute the jar with this command java -jar product-service-0.0.1-SNAPSHOT.jar .
+
+the application should run at http://localhost:8080
+
+
+== Description ==
+
+for all the endpoint go to http://localhost:8080/swagger-ui.html#/
+
+
+== Some user case example for demo interview ==
+
+here is list of default data insert at runtime
+
+CATALOG
+
+{"codeCatalog":"CE","name":"Comedie"}
+{"codeCatalog":"AC","name":"Action"}
+{"codeCatalog":"SP","name":"Sport"}
+{"codeCatalog":"SC","name":"Sience-fiction"}
+{"codeCatalog":"AV","name":"Adventure"}
+{"codeCatalog":"DR","name":"Drama"}
+{"codeCatalog":"HR","name":"Horror"}
+
+PRODUCT
+
+{"idProductDetail":1,"title":"E.T. THE EXTRA-TERRESTRIAL","description":"classic movie for kids","price":19.99,"catalog":{"codeCatalog":"SC","name":"Sience-fiction"}}
+{"idProductDetail":2,"title":"ALIEN","description":" Alien blends science fiction","price":19.99,"catalog":{"codeCatalog":"HR","name":"Horror"}}
+{"idProductDetail":3,"title":"SEVEN SAMURAI","description":"The Seven Samurai is an epic adventure classic","price":19.99,"catalog":{"codeCatalog":"AC","name":"Action"}}
+{"idProductDetail":4,"title":"THE SEARCHERS","description":"John Wayne Western that introduces dark ambivalence","price":19.99,"catalog":{"codeCatalog":"AV","name":"Adventure"}}
+{"idProductDetail":5,"title":"SUPERBAD","description":"Deftly balancing vulgarity and sincerity ","price":19.99,"catalog":{"codeCatalog":"CE","name":"Comedie"}}
+{"idProductDetail":6,"title":"ENTER THE DRAGON","description":"Bruce lee","price":19.99,"catalog":{"codeCatalog":"SP","name":"Sport"}}
+{"idProductDetail":7,"title":"LOVE AND BASKETBALL","description":" A young African-American couple navigates the tricky paths","price":19.99,"catalog":{"codeCatalog":"DR","name":"Drama"}}
+
+using postman app from google navigator
+
+if you don't have postman plugin here the link https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
+
+the session will reset if the product-service get shut down
+
+showing catalog of product :  GET http://localhost:8080/api/v1/catalog/all
+showing detail of one product : GET http://localhost:8080/api/v1/product/1
+add product to cart : GET http://localhost:8080/api/v1/cart/addProduct/4
+remove product from cart GET http://localhost:8080/api/v1/cart/removeProduct/4
+show the cart GET http://localhost:8080/api/v1/cart/current
